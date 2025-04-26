@@ -18,7 +18,7 @@ data "archive_file" "zip_the_python_code" {
 }
 
 resource "aws_iam_role" "lambda_exec_role" {
-  name = "lambda_csv_to_parquet_exec_role_v2"
+  name = "lambda_csv_to_parquet_exec_role_v3"
 
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
@@ -35,7 +35,7 @@ resource "aws_iam_role" "lambda_exec_role" {
 }
 
 resource "aws_iam_role_policy" "lambda_policy" {
-  name = "lambda_csv_to_parquet_policy_v2"
+  name = "lambda_csv_to_parquet_policy_v3"
   role = aws_iam_role.lambda_exec_role.id
 
   policy = jsonencode({
