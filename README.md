@@ -1,73 +1,52 @@
-📄 CSV to Parquet Data Pipeline on AWS (Terraform + GitHub Actions)
-📚 Project Overview
-This project automates an event-driven data pipeline using AWS services.
-When a CSV file is uploaded to the source S3 bucket, it automatically triggers a Lambda function that:
+# 🚀 AWS CSV to Parquet Data Pipeline (Terraform + GitHub Actions)
 
-Converts the CSV file to Parquet format.
+## 📖 Overview
 
-Uploads the Parquet file to the destination S3 bucket.
+This project implements a **serverless data pipeline** on **AWS**, fully managed with **Terraform** and automated by **GitHub Actions**.
 
-Sends a notification email via SNS (Simple Notification Service).
+- ✅ Upload a **CSV** to **Source S3 Bucket**
+- ✅ **Lambda** function triggers automatically
+- ✅ CSV is converted to **Parquet** format
+- ✅ **Parquet** file is saved to **Destination S3 Bucket**
+- ✅ **SNS Email Notification** is sent
 
-All AWS resources are provisioned and managed automatically using Terraform modules and CI/CD with GitHub Actions.
+All AWS resources are provisioned **dynamically** using **Terraform Modules**.
 
-[User Uploads CSV to Source S3 Bucket]
-                   ↓
-         [S3 Event Notification]
-                   ↓
-            [AWS Lambda Function]
-         - Converts CSV ➔ Parquet
-         - Uploads to Destination S3
-         - Publishes message to SNS
-                   ↓
-             [Email Notification]
+---
+
+## 🧩 Architecture
 
 
-🛠️ Technologies Used
-AWS S3 (Source and Destination Buckets)
+---
 
-AWS Lambda (CSV ➔ Parquet conversion)
+## 🛠️ Tech Stack
 
-AWS SNS (Email Notification)
+| Technology              | Purpose                                  |
+|--------------------------|------------------------------------------|
+| **AWS S3**               | Store CSV and Parquet files              |
+| **AWS Lambda**           | Convert CSV to Parquet                  |
+| **AWS SNS**              | Email notifications                    |
+| **AWS IAM**              | Roles and Policies                     |
+| **Terraform**            | Infrastructure as Code                 |
+| **GitHub Actions**       | CI/CD Automation                       |
+| **Python (pandas, pyarrow)** | Data transformation               |
 
-AWS IAM (Permissions and Role Management)
+---
 
-Terraform (Infrastructure as Code)
-
-GitHub Actions (CI/CD for Terraform)
+## 🗂️ Project Structure
 
 
+---
 
-📦 Project Structure
-bash
-Copy
-Edit
-.
-├── .github/
-│   └── workflows/
-│       └── terraform.yml         # GitHub Actions CI/CD pipeline
-├── modules/
-│   └── s3_lambda_sns/
-│       ├── main.tf               # Terraform module main configuration
-│       ├── variables.tf          # Module input variables
-│       └── outputs.tf            # Module outputs (optional)
-├── python/
-│   └── lambda_function.py        # Lambda function to convert CSV to Parquet
-├── main.tf                       # Root module to call s3_lambda_sns module
-├── variables.tf                  # Root variables
-├── terraform.tfvars              # Variables values
-└── README.md                     # Project Documentation
+## 🚀 Deployment Instructions
 
-🚀 Deployment Instructions
-Clone the repository
+### 🖥️ Local Deployment
 
-bash
-Copy
-Edit
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-Configure your AWS credentials
-(Make sure you are using a named profile if needed.)
+1. **Clone the Repository**
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+cd YOUR_REPO
 
 Initialize Terraform
 
@@ -75,45 +54,53 @@ bash
 Copy
 Edit
 terraform init
-Review the plan
+Validate the Code
+
+bash
+Copy
+Edit
+terraform validate
+Plan Infrastructure
 
 bash
 Copy
 Edit
 terraform plan
-Apply the configuration
+Apply Infrastructure
 
 bash
 Copy
 Edit
 terraform apply -auto-approve
-Verify
+🤖 GitHub Actions Deployment
+Pushing any changes to GitHub automatically triggers the Terraform workflow.
 
-Upload a CSV file to the source S3 bucket.
+It runs:
 
-Check the destination S3 bucket for the converted Parquet file.
+terraform init
 
-Check your email for the notification.
+terraform plan
 
-Automated Deployment (CI/CD)
-Every push to the GitHub repository triggers GitHub Actions to automatically apply the latest changes.
+terraform apply
 
-🎯 Key Highlights
-Fully automated deployment with Terraform and GitHub Actions.
+Fully automated with CI/CD!
 
-Clean modular design using Terraform modules.
 
-Event-driven architecture with S3 triggers and Lambda.
+✅ Features
+Automatic trigger on new CSV uploads to S3
 
-Efficient data processing with CSV ➔ Parquet conversion.
+Converts CSV to Parquet format using Lambda
 
-Instant notifications via AWS SNS.
+Stores converted files into Destination S3 Bucket
 
-📧 Contact
-Developer: [Your Full Name]
-Email: [Your Email Address]
-GitHub: [Your GitHub Profile Link]
+Sends SNS Email Notifications after successful processing
 
-✅ Status
-Project Status: 100% Completed
-Working: Successfully tested and verified.
+Infrastructure as Code using Terraform Modules
+
+Fully automated deployment using GitHub Actions
+
+📧 Contact Information
+Name: Your Name
+Email: your.email@example.com
+GitHub: https://github.com/YOUR_USERNAME
+
