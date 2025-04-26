@@ -1,106 +1,90 @@
-# 🚀 AWS CSV to Parquet Data Pipeline (Terraform + GitHub Actions)
-
-## 📖 Overview
-
-This project implements a **serverless data pipeline** on **AWS**, fully managed with **Terraform** and automated by **GitHub Actions**.
-
-- ✅ Upload a **CSV** to **Source S3 Bucket**
-- ✅ **Lambda** function triggers automatically
-- ✅ CSV is converted to **Parquet** format
-- ✅ **Parquet** file is saved to **Destination S3 Bucket**
-- ✅ **SNS Email Notification** is sent
-
-All AWS resources are provisioned **dynamically** using **Terraform Modules**.
+# 📦 CSV to Parquet S3 Pipeline | Terraform, Lambda, SNS, GitHub Actions
 
 ---
 
-## 🧩 Architecture
+## 🚀 Project Overview
 
-
----
-
-## 🛠️ Tech Stack
-
-| Technology              | Purpose                                  |
-|--------------------------|------------------------------------------|
-| **AWS S3**               | Store CSV and Parquet files              |
-| **AWS Lambda**           | Convert CSV to Parquet                  |
-| **AWS SNS**              | Email notifications                    |
-| **AWS IAM**              | Roles and Policies                     |
-| **Terraform**            | Infrastructure as Code                 |
-| **GitHub Actions**       | CI/CD Automation                       |
-| **Python (pandas, pyarrow)** | Data transformation               |
+Welcome! This project automatically converts CSV files uploaded to an S3 bucket into Parquet format using an AWS Lambda function. The converted files are then stored in another S3 bucket, and an SNS email notification is sent upon successful conversion. All of this is Infrastructure as Code (IaC) managed by Terraform and deployed automatically with GitHub Actions.
 
 ---
 
-## 🗂️ Project Structure
+## 🛠️ Quickstart Guide
 
+### Initialize Terraform
+```bash
+terraform init
+```
+
+### Validate Terraform Code
+```bash
+terraform validate
+```
+
+### Plan Infrastructure Changes
+```bash
+terraform plan
+```
+
+### Apply and Deploy Infrastructure
+```bash
+terraform apply -auto-approve
+```
 
 ---
 
-## 🚀 Deployment Instructions
+## 🤖 GitHub Actions CI/CD Pipeline
 
-### 🖥️ Local Deployment
+Every push to the `main` branch triggers an automated workflow that runs:
+- `terraform init`
+- `terraform plan`
+- `terraform apply`
 
-1. **Clone the Repository**
+✅ **Fully automated deployments!**
+
+---
+
+## 🌟 Features
+
+- 📥 **S3 Event Trigger**: Upload CSV files to automatically trigger the Lambda.
+- 🔄 **Lambda Conversion**: Lambda function converts CSV to Parquet format.
+- 📤 **S3 Storage**: Saves converted Parquet files to destination bucket.
+- 📧 **SNS Notifications**: Sends an email notification after successful conversion.
+- 🏗️ **Infrastructure as Code**: All AWS resources are managed through Terraform.
+- ⚡ **Continuous Deployment**: Automated CI/CD with GitHub Actions.
+
+---
+
+## 📂 Project Structure
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+.
+├── modules/
+│   └── s3_lambda_sns/     # Terraform module with all resources
+├── python/                # Lambda function source code
+├── .github/workflows/     # GitHub Actions workflow files
+├── main.tf                # Root Terraform configuration
+├── variables.tf           # Variables for Terraform
+├── outputs.tf             # Terraform Outputs
+└── README.md              # Project Documentation
+```
 
-Initialize Terraform
+---
 
-bash
-Copy
-Edit
-terraform init
-Validate the Code
+## 📧 Contact Information
 
-bash
-Copy
-Edit
-terraform validate
-Plan Infrastructure
+- **Name:** Arvindh S
+- **Email:** arvindh.your@email.com
+- **GitHub:** [github.com/Arvindh1212](https://github.com/Arvindh1212)
 
-bash
-Copy
-Edit
-terraform plan
-Apply Infrastructure
+---
 
-bash
-Copy
-Edit
-terraform apply -auto-approve
-🤖 GitHub Actions Deployment
-Pushing any changes to GitHub automatically triggers the Terraform workflow.
+## 🎯 Project Status
 
-It runs:
+✅ **Deployment Successful** | ✅ **Tested End-to-End** | ✅ **Production-Ready**
 
-terraform init
+---
 
-terraform plan
+## 🙏 Thank You!
 
-terraform apply
-
-Fully automated with CI/CD!
-
-
-✅ Features
-Automatic trigger on new CSV uploads to S3
-
-Converts CSV to Parquet format using Lambda
-
-Stores converted files into Destination S3 Bucket
-
-Sends SNS Email Notifications after successful processing
-
-Infrastructure as Code using Terraform Modules
-
-Fully automated deployment using GitHub Actions
-
-📧 Contact Information
-Name: Your Name
-Email: your.email@example.com
-GitHub: https://github.com/YOUR_USERNAME
+Thank you for checking out this project. Feel free to connect if you have questions or suggestions! ✨
 
