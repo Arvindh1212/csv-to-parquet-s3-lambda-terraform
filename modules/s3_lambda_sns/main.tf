@@ -9,8 +9,8 @@ resource "aws_s3_bucket" "destination_bucket" {
 # Zips the lambda source code
 data "archive_file" "zip_the_python_code" {
   type        = "zip"
-  source_dir  = "${path.module}/python"
-  output_path = "${path.module}/python/python.zip"
+  source_dir  = "${path.module}/modules/python"
+  output_path = "${path.module}modules/python/python.zip"
 }
 
 resource "aws_iam_role" "lambda_exec_role" {
