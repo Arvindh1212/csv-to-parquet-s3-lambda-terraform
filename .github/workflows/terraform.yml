@@ -35,6 +35,9 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
 
+      - name: Taint all resources
+        run: terraform taint '*'
+
       # Deploy terraform changes
       - name: Terraform Apply
         run: terraform apply -auto-approve
