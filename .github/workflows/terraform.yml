@@ -36,7 +36,7 @@ jobs:
         run: terraform plan
 
       - name: Taint all resources
-        run: terraform taint '*'
+        run: terraform state list | xargs -n1 terraform taint
 
       # Deploy terraform changes
       - name: Terraform Apply
