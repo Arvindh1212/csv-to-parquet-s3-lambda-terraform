@@ -34,10 +34,7 @@ jobs:
       # Execute the terraform plan
       - name: Terraform Plan
         run: terraform plan
-
-      - name: Taint all resources
-        run: terraform state list | xargs -n1 terraform taint
-
+        
       # Deploy terraform changes
       - name: Terraform Apply
         run: terraform apply -auto-approve
