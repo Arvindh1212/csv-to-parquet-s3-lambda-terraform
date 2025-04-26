@@ -1,8 +1,5 @@
 provider "aws" {
   region  = "us-east-1"
-  shared_config_files      = ["~/aws-creds/myproject-credentials"]
-  shared_credentials_files = ["~/aws-creds/myproject-credentials"]
-  profile                  = "s3-csv-to-parquet-pipelin"
 }
 
 resource "aws_s3_bucket" "source_bucket" {
