@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket         = "tfstate-new-pro"   # Replace with your actual bucket name
+    key            = "state/terraform.tfstate"       # This is the path to the state file in the bucket
+    region         = "us-east-1"
+  }
+}
+
 provider "aws" {
   region  = "us-east-1"
 }
@@ -5,16 +13,17 @@ provider "aws" {
 module "s3_lambda_sns" {
   source = "./modules/s3_lambda_sns"
 
-  source_bucket_name      = "csv-source-bucket-arvind-123"
-  destination_bucket_name = "parquet-destination-bucket-arvind-123"
-  lambda_function_name    = "csv-to-parquet-lambda"
-  sns_topic_name          = "csv-to-parquet-lambda-topic"
-  sns_email_address       = "arvindhsk1212@gmail.com"
 
-  lambda_role_name        = "lambda_csv_to_parquet_exec_role_v10"
-  lambda_policy_name      = "lambda_csv_to_parquet_policy_v10"
+  source_bucket_name      = var.source_bucket_name
+  destination_bucket_name = var.destination_bucket_name
+  lambda_function_name    = var.lambda_function_name
+  sns_topic_name          = var.sns_topic_name
+  sns_email_address       = var.sns_email_address
+  lambda_role_name        = var.lambda_role_name
+  lambda_policy_name      = var.lambda_policy_name
+  lambda_timeout          = var.lambda_timeout
+  lambda_memory_size      = var.lambda_memory_size
 
-  lambda_timeout          = 300
-  lambda_memory_size      = 512
+
 }
 
