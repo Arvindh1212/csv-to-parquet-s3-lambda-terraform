@@ -11,11 +11,13 @@ When a CSV file is uploaded to the source S3 bucket, it automatically triggers a
 - Uploads the Parquet file to the destination S3 bucket.
 - Sends a notification email via SNS (Simple Notification Service).
 
-All AWS resources are provisioned and managed automatically using Terraform modules and CI/CD with GitHub Actions.
+All AWS resources are provisioned and smanaged automatically using Terraform modules and CI/CD with GitHub Actions.
 
 ---
 
 ## ⚡ Architecture
+
+![Architecture Diagram](./architecture.png)
 
 ```
 [User Uploads CSV to Source S3 Bucket]
