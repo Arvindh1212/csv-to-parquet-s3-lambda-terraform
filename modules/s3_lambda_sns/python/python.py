@@ -49,3 +49,13 @@ def lambda_handler(event, context):
         'body': f'Successfully converted {key} to {parquet_key}'
     }
 
+'''
+
+csv_obj = s3.get_object(Bucket=bucket, Key=key)
+df = pd.read_csv(csv_obj['Body'])
+
+import pandas as pd
+
+df = pd.read_csv(csv_obj['Body'])
+
+'''
