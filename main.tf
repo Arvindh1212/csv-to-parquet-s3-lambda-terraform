@@ -12,8 +12,9 @@ module "s3_lambda_sns" {
   sns_email_address       = "arvindhsk1212@gmail.com"
 
   lambda_role_name        = "lambda_csv_to_parquet_exec_role_v8"
-  lambda_policy_name      = "lambda_csv_to_parquet_policy_v8"
+  lambda_policy_name      = "lambda_csv_to_parquet_policy_v9"
 
   lambda_timeout          = 300
   lambda_memory_size      = 512
 }
+
