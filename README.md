@@ -31,7 +31,7 @@ All AWS resources are provisioned and smanaged automatically using Terraform mod
 ---
 
 ## 📦 Project Structure
-.
+```
 ├── .github/
 │   └── workflows/
 │       └── terraform.yml         # GitHub Actions CI/CD pipeline
@@ -46,7 +46,7 @@ All AWS resources are provisioned and smanaged automatically using Terraform mod
 ├── variables.tf                  # Root variables
 ├── terraform.tfvars              # Variables values
 └── README.md                     # Project Documentation
-
+```
 ---
 
 ## 🚀 Deployment Instructions
