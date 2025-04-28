@@ -18,20 +18,6 @@ All AWS resources are provisioned and smanaged automatically using Terraform mod
 ## ⚡ Architecture
 
 ![Architecture Diagram](./architecture.png)
-
-```
-[User Uploads CSV to Source S3 Bucket]
-                   ↓
-         [S3 Event Notification]
-                   ↓
-            [AWS Lambda Function]
-         - Converts CSV ➔ Parquet
-         - Uploads to Destination S3
-         - Publishes message to SNS
-                   ↓
-             [Email Notification]
-```
-
 ---
 
 ## 🛠️ Technologies Used
@@ -42,12 +28,9 @@ All AWS resources are provisioned and smanaged automatically using Terraform mod
 - **AWS IAM** (Permissions and Role Management)
 - **Terraform** (Infrastructure as Code)
 - **GitHub Actions** (CI/CD for Terraform)
-
 ---
 
 ## 📦 Project Structure
-
-```
 .
 ├── .github/
 │   └── workflows/
@@ -63,7 +46,6 @@ All AWS resources are provisioned and smanaged automatically using Terraform mod
 ├── variables.tf                  # Root variables
 ├── terraform.tfvars              # Variables values
 └── README.md                     # Project Documentation
-```
 
 ---
 
@@ -123,11 +105,25 @@ Every push to the GitHub repository triggers GitHub Actions to automatically app
 
 ---
 
+---
+
+## 💼  Use Cases
+
+- 🧩 **Data Lake Ingestion Pipelines:**: Automate conversion of raw CSV data to optimized Parquet files for Big Data processing.
+- 🧩 **Real-Time Data Processing**: Instantly transform incoming datasets without manual intervention.
+- 🧩 **Cloud Storage Optimization**: Save storage costs and improve analytics performance by using efficient file formats like Parquet.
+- 🧩 **SNS Notifications**: Save storage costs and improve analytics performance by using efficient file formats like Parquet.
+- 🧩 **Automated Reporting Pipelines**: Ensure that data is ready for visualization or Machine Learning workflows immediately after upload.
+- 🧩 **ETL Workflows**: erve as a lightweight Extract-Transform-Load solution for serverless data operations.
+
+
+---
+
 ## 📧 Contact
 
-- **Developer:** [Your Full Name]
-- **Email:** [Your Email Address]
-- **GitHub:** [Your GitHub Profile Link]
+- **Developer:** Arvindh Saravanan
+- **Email:** arvindhsk1212@gmail.com
+- **GitHub:** https://github.com/Arvindh1212
 
 ---
 
