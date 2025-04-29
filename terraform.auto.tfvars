@@ -4,6 +4,6 @@ lambda_function_name      = "csv-to-parquet-lambda"
 sns_topic_name            = "csv-to-parquet-lambda-topic"
 sns_email_address         = "arvindhsk1212@gmail.com"
 lambda_role_name          = "lambda_csv_to_parquet_exec_role_v10"
-lambda_policy_name        = "lambda_csv_to_parquet_policy_v10"
+lambda_policy_name        = "lambda_csv_to_parquet_policy_v11"
 lambda_timeout            = 300
 lambda_memory_size        = 512
