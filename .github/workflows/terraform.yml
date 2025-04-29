@@ -32,6 +32,8 @@ jobs:
       - name: Setup Terraform
         uses: ./.github/actions/terraform-setup
 
+      - run: terraform init 
+
       - run: terraform validate
 
   deploy:
