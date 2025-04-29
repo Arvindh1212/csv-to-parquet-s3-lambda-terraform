@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Setup Terraform and AWS
-        uses: ./.github/actions/terraform-setup
+        uses: ./.github/workflows/actions/terraform-setup
 
       - name: Terraform Init
         run: terraform init
@@ -18,7 +18,7 @@ jobs:
     needs: build
     steps:
       - name: Setup Terraform and AWS
-        uses: ./.github/actions/terraform-setup
+        uses: ./.github/workflows/actions/terraform-setup
 
       - name: Terraform Validate
         run: terraform validate
@@ -28,7 +28,7 @@ jobs:
     needs: test
     steps:
       - name: Setup Terraform and AWS
-        uses: ./.github/actions/terraform-setup
+        uses: ./.github/workflows/actions/terraform-setup
 
       - name: Terraform Init
         run: terraform init
