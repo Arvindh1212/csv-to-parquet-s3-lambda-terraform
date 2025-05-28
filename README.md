@@ -1,4 +1,5 @@
-# 📚 CSV to Parquet Data Pipeline on AWS (Terraform + GitHub Actions)
+# 📚 CSV to Parquet Data Pipeline on AWS (Terraform + GitHub Actions) 
+Author : Arvindh
 
 ---
 
