@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "tfstate-new-pro"   # Replace with your actual bucket name
+    bucket         = "tfstate-new-pro"   # Replace with your actual bucket name jjj
     key            = "state/terraform.tfstate"       # This is the path to the state file in the bucket
     region         = "us-east-1"
   }
